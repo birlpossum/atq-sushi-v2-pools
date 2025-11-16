@@ -140,10 +140,9 @@ async function fetchPools(
   if (!response.ok) throw new Error(`HTTP error (pools): ${response.status}`);
   const result = (await response.json()) as GraphQLResponse;
   if (result.errors) {
-    result.errors.forEach((error) =>
-      console.error(`GraphQL error (pools): ${error.message}`)
-    );
-    throw new Error("GraphQL error from pools subgraph.");
+    const errorMessages = result.errors.map(e => e.message).join("; ");
+    console.error(`GraphQL error (pools): ${errorMessages}`);
+    throw new Error(`GraphQL error from pools subgraph: ${errorMessages}`);
   }
   return result.data?.liquidityPools ?? [];
 }
