@@ -13,10 +13,9 @@ import { ContractTag, ITagService } from "atq-types";
 // Sushi v2 Liquidity Pools on supported chains using Messari subgraphs
 // Messari Sushiswap subgraphs: https://thegraph.com/explorer?search=messari%20sushiswap
 const SUBGRAPH_URLS: Record<string, string> = {
-  "42161": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmRkp5iisPLn14S7eZcE69AhWUntS7uFYLEkUw1TzqeuMi",
-  "43114": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZyoRwhXKY2o9Yxqur5hNufKPPSwhZANtf4QQaiqC7Qms",
   "56": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmPi9QJjaPfoTEwfNMiuqoZmTc1RGFi3DeZy4UERDDqSJn",
-  "100": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmYUy7ktXCgxYVzks5H8awYgxifryrhuCQCDfFcjEk7Nhk",
+  "137": "https://gateway.thegraph.com/api/[api-key]/deployments/id/Qmc3gbKAd1eemQbaTvY93S2FpuPEipGaVKCQ97pBkXgtyN",
+  "250": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZ3Zs57Bt9njPji3Ty6A9761hwQaHYYGMCjs5f7oiidxz",
 };
 
 // ---------- Types ----------
@@ -201,16 +200,16 @@ class TagService implements ITagService {
     // Enforce decimal string format only
     if (!/^\d+$/.test(trimmedChainId)) {
       throw new Error(
-        `Unsupported Chain ID: ${originalChainId}. Only 42161 (Arbitrum One), 43114 (Avalanche C-Chain), 56 (BNB Chain), and 100 (Gnosis Chain) are currently supported in this module.`
+        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), and 250 (Fantom) are currently supported in this module.`
       );
     }
 
     const chainIdNum = Number(trimmedChainId);
-    const supportedChains = [42161, 43114, 56, 100];
+    const supportedChains = [56, 137, 250];
 
     if (!Number.isInteger(chainIdNum) || !supportedChains.includes(chainIdNum)) {
       throw new Error(
-        `Unsupported Chain ID: ${originalChainId}. Only 42161 (Arbitrum One), 43114 (Avalanche C-Chain), 56 (BNB Chain), and 100 (Gnosis Chain) are currently supported in this module.`
+        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), and 250 (Fantom) are currently supported in this module.`
       );
     }
 
