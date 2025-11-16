@@ -13,10 +13,10 @@ import { ContractTag, ITagService } from "atq-types";
 // Sushi v2 Liquidity Pools on supported chains using Messari subgraphs
 // Messari Sushiswap subgraphs: https://thegraph.com/explorer?search=messari%20sushiswap
 const SUBGRAPH_URLS: Record<string, string> = {
-  "56": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmPi9QJjaPfoTEwfNMiuqoZmTc1RGFi3DeZy4UERDDqSJn",
-  "137": "https://gateway.thegraph.com/api/[api-key]/deployments/id/Qmc3gbKAd1eemQbaTvY93S2FpuPEipGaVKCQ97pBkXgtyN",
-  "250": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZ3Zs57Bt9njPji3Ty6A9761hwQaHYYGMCjs5f7oiidxz",
-  "1285": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZw2kXL8tt6FoNeo4qLSN3rbe9tkWtGxDtBV3iWJMEkf7",
+  "56": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmPi9QJjaPfoTEwfNMiuqoZmTc1RGFi3DeZy4UERDDqSJn", // BNB Chain
+  "137": "https://gateway.thegraph.com/api/[api-key]/deployments/id/Qmc3gbKAd1eemQbaTvY93S2FpuPEipGaVKCQ97pBkXgtyN", // Polygon
+  "250": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZ3Zs57Bt9njPji3Ty6A9761hwQaHYYGMCjs5f7oiidxz", // Fantom
+  "1285": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZw2kXL8tt6FoNeo4qLSN3rbe9tkWtGxDtBV3iWJMEkf7", // Moonriver
 };
 
 // ---------- Types ----------
