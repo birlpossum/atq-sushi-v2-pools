@@ -16,6 +16,7 @@ const SUBGRAPH_URLS: Record<string, string> = {
   "56": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmPi9QJjaPfoTEwfNMiuqoZmTc1RGFi3DeZy4UERDDqSJn",
   "137": "https://gateway.thegraph.com/api/[api-key]/deployments/id/Qmc3gbKAd1eemQbaTvY93S2FpuPEipGaVKCQ97pBkXgtyN",
   "250": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZ3Zs57Bt9njPji3Ty6A9761hwQaHYYGMCjs5f7oiidxz",
+  "1285": "https://gateway.thegraph.com/api/[api-key]/deployments/id/QmZw2kXL8tt6FoNeo4qLSN3rbe9tkWtGxDtBV3iWJMEkf7",
 };
 
 // ---------- Types ----------
@@ -200,16 +201,16 @@ class TagService implements ITagService {
     // Enforce decimal string format only
     if (!/^\d+$/.test(trimmedChainId)) {
       throw new Error(
-        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), and 250 (Fantom) are currently supported in this module.`
+        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), 250 (Fantom), and 1285 (Moonriver) are currently supported in this module.`
       );
     }
 
     const chainIdNum = Number(trimmedChainId);
-    const supportedChains = [56, 137, 250];
+    const supportedChains = [56, 137, 250, 1285];
 
     if (!Number.isInteger(chainIdNum) || !supportedChains.includes(chainIdNum)) {
       throw new Error(
-        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), and 250 (Fantom) are currently supported in this module.`
+        `Unsupported Chain ID: ${originalChainId}. Only 56 (BNB Chain), 137 (Polygon), 250 (Fantom), and 1285 (Moonriver) are currently supported in this module.`
       );
     }
 
